@@ -1,0 +1,5 @@
+\pset linestyle unicode
+\pset border 3
+\pset null <>
+\timing
+\set PROMPT1 '%[%033[1;33m%]%x%[%033[0m%]%[%033[33m%]%/%[%033[0m%]#%[%033[30;1m%]%==>%[%033[0m%] '
