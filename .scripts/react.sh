@@ -21,7 +21,7 @@ mkdir ./src/utilities ./src/css ./src/components &&
 # printf '\33c\e' &&
 echo -e "\nBuilding ${GREEN}App.js${CLEAR} and ${GREEN}index.js${CLEAR}. Also here's a ${GREEN}README${CLEAR}.\n\n" &&
 touch ./src/components/App.js ./src/index.js README.md && 
-printf "import React from 'react'\nimport ReactDOM from 'react-dom'\nimport App from './js/App'\n\nReactDOM.render(\n\t<App />,\ndocument.getElementById('root'))">> ./src/index.js && 
+printf "import React from 'react'\nimport ReactDOM from 'react-dom'\nimport App from './components/App'\n\nReactDOM.render(\n\t<App />,\ndocument.getElementById('root'))">> ./src/index.js && 
 printf "import React, { Component } from 'react'\n\nexport default class App extends Component {\n\trender(){\n\t\treturn (\n\t\t\t<div className='App'>\n\t\t\t\t<p>Testing!</p>\n\t\t\t</div>\n\t\t)\n\t}\n}">> ./src/components/App.js &&
 for i
 do
