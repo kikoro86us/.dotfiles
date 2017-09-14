@@ -17,12 +17,12 @@ npm i -s axios react-router-dom &&
 echo -e "\nDeleting the crap from ${CYAN}create-react-app${CLEAR},\nand adding ${GREEN}utilities${CLEAR}, ${GREEN}css${CLEAR}, and ${GREEN}components${CLEAR} folders\n" &&
 rm -rfv ./src/* ./public/favicon.ico ./README.md && 
 mkdir ./src/utilities ./src/css ./src/components &&
-#rebuild index.js and App.jsx
+#rebuild index.js and App.js
 # printf '\33c\e' &&
-echo -e "\nBuilding ${GREEN}App.jsx${CLEAR} and ${GREEN}index.js${CLEAR}. Also here's a ${GREEN}README${CLEAR}.\n\n" &&
-touch ./src/components/App.jsx ./src/index.js README.md && 
+echo -e "\nBuilding ${GREEN}App.js${CLEAR} and ${GREEN}index.js${CLEAR}. Also here's a ${GREEN}README${CLEAR}.\n\n" &&
+touch ./src/components/App.js ./src/index.js README.md && 
 printf "import React from 'react'\nimport ReactDOM from 'react-dom'\nimport App from './js/App'\n\nReactDOM.render(\n\t<App />,\ndocument.getElementById('root'))">> ./src/index.js && 
-printf "import React, { Component } from 'react'\n\nexport default class App extends Component {\n\trender(){\n\t\treturn (\n\t\t\t<div className='App'>\n\t\t\t\t<p>Testing!</p>\n\t\t\t</div>\n\t\t)\n\t}\n}">> ./src/components/App.jsx &&
+printf "import React, { Component } from 'react'\n\nexport default class App extends Component {\n\trender(){\n\t\treturn (\n\t\t\t<div className='App'>\n\t\t\t\t<p>Testing!</p>\n\t\t\t</div>\n\t\t)\n\t}\n}">> ./src/components/App.js &&
 for i
 do
     if [ $i == 'sass' ] 
@@ -32,9 +32,9 @@ do
         echo -e "You've run this command with the ${RED}sass${CLEAR} argument. Here are your ${GREEN}reset${CLEAR}, ${GREEN}main${CLEAR} and ${GREEN}variables${CLEAR} files\n" &&
         cp ~/Codes/_reset.scss ./src/sass &&
         touch ./src/sass/main.scss ./src/sass/_variables.scss &&
-        rm ./src/components/App.jsx &&
-        touch ./src/components/App.jsx &&
-        printf "import React, { Component } from 'react'\nimport '../sass/main.scss'\n\nexport default class App extends Component {\n\trender(){\n\t\treturn (\n\t\t\t<div className='App'>\n\t\t\t\t<p>Testing!</p>\n\t\t\t</div>\n\t\t)\n\t}\n}">> ./src/components/App.jsx
+        rm ./src/components/App.js &&
+        touch ./src/components/App.js &&
+        printf "import React, { Component } from 'react'\nimport '../sass/main.scss'\n\nexport default class App extends Component {\n\trender(){\n\t\treturn (\n\t\t\t<div className='App'>\n\t\t\t\t<p>Testing!</p>\n\t\t\t</div>\n\t\t)\n\t}\n}">> ./src/components/App.js
         printf "@import 'reset';\n@import 'variables';\n">> ./src/sass/main.scss &&
         #install dependencies
         printf "Installing sass dependencies ${CYAN}npm-run-all${CLEAR} and ${CYAN}node-sass-chokidar${CLEAR}...\n\n" &&
